@@ -24,7 +24,7 @@ $data=$index_objj->select_category();
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+<!--                    <li><a href="services.html">Services</a></li>-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -49,7 +49,8 @@ $data=$index_objj->select_category();
 
                         </ul>
                     </li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.php">Faq</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div><!-- navbar-collapse -->

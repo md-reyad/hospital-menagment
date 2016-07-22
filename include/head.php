@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="img/season-change.html" type="image/x-icon">
-		<title>HealthCare</title>
+		<title>Hospital management</title>
 
 		
 	    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>

@@ -421,6 +421,8 @@ include './include/head.php';
                             include './contant/edit_serial_contant.php';
                         }elseif ($pages=='edit_contact') {
                             include './contant/edit_contact_contant.php';
+                        }elseif ($pages=='add_photo') {
+                            include './contant/add_photo_contant.php';
                         }
                     } else {
                         include './include/contant.php';

@@ -213,7 +213,7 @@ class admin_function extends Connect {
         $type = $file['slider']['type'];
         $size = $file['slider']['size'];
         if ($size > 1000 * 1024) {
-            $msg = "<div class='alert alert-error'>Too large image</div>";
+            $msg = "<div class='alert alert-danger'>Too large image</div>";
             return $msg;
         } else {
             if (($type == 'image/jpg') || ($type == 'image/jpeg') || ($type == 'image/png')) {
@@ -224,6 +224,32 @@ class admin_function extends Connect {
             }
         }
         $query = "INSERT INTO tbl_slider (description,slider) VALUES('$data[description]','$my_file')";
+        $result = mysqli_query($this->connect, $query);
+        if ($result) {
+            $msg = "<div class ='alert alert-success'>your Insert SuccessFully</div>";
+            return $msg;
+        } else {
+            $msg = "<div class ='alert alert-danger'>sorry!! your insert not successfully</div> ";
+            return $msg;
+        }
+    }
+    public function photo_sotre($data, $file) {
+        $temp_flie = $file['photo']['tmp_name'];
+        $my_file = $file['photo']['name'];
+        $type = $file['photo']['type'];
+        $size = $file['photo']['size'];
+        if ($size > 500 * 1024) {
+            $msg = "<div class='alert alert-danger'>Too large image</div>";
+            return $msg;
+        } else {
+            if (($type == 'image/jpg') || ($type == 'image/jpeg') || ($type == 'image/png')) {
+                copy($temp_flie, 'photo/' . $my_file) or die("image error");
+            } else {
+                $msg = "<div class='alert alert-danger'>your picture not connect format!!! you must be jpg/jpeg/png</div>";
+                return $msg;
+            }
+        }
+        $query = "INSERT INTO tbl_image (description,photo) VALUES('$data[description]','$my_file')";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
             $msg = "<div class ='alert alert-success'>your Insert SuccessFully</div>";

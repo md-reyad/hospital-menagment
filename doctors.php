@@ -66,7 +66,7 @@ $dataa=$index_objjs->select_doctor()
                                     <div class="doctor-social text-center">
                                         <ul class="contact">
                                             <li class="online-contact">
-                                                <a href="#" data-toggle="tooltip" title="Share in Facebook"><i class="fa fa-facebook"></i></a>
+                                                <a href="http://www.facebook.com" target="_blank" data-toggle="tooltip" title="Share in Facebook"><i class="fa fa-facebook"></i></a>
                                             </li>
                                             <li class="online-contact">
                                                 <a href="#" data-toggle="tooltip" title="Connect with Skype"><i class="fa fa-skype"></i></a>

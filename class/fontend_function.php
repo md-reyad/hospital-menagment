@@ -92,6 +92,13 @@ class fontend_function extends Connect {
             return $result;
         }
     }
+    public function select_photo(){
+           $query = 'SELECT * FROM tbl_image ORDER BY id DESC LIMIT 30';
+        $result = mysqli_query($this->connect, $query);
+        if ($result) {
+            return $result;
+        }
+    }
 
 }
 

@@ -3,45 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/xampp/htdocs/hospital_man/class/admin_function.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/view_serial.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/add_serial.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/admin/admin-template/responsive-datatables.html</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/add_serial_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/doctors.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/add_footer.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/admin/admin-template/pickers.html</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/view_category_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/include/side_menu.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/class/fontend_function.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/add_slider.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/include/contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/add_contact.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/include/head.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/add_slider_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/edit_serial_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/registration.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/view_contact.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/view_doctor_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/doctor_edit_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/login.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/index.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/view_contact_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/doctor_edit.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/class/config.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/add_footer_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/edit_serial.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/edit_contact_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/add_category_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/include/nav.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/view_serial_contant.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/view_serial_contant_admin.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/services.html</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/contact.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/edit_contact.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/dashboard.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/add_doctor.php</file>
-            <file>file:/F:/xampp/htdocs/hospital_man/admin/contant/add_contact_contant.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/include/footer.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/contant/add_photo_contant.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/class/admin_function.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/include/head.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/gallery.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/doctors.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/dashboard.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/faq.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/view_contact.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/add_photo.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/admin/include/side_menu.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/include/head.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/index.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/include/nav.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/class/fontend_function.php</file>
+            <file>file:/F:/xampp/htdocs/hospital-menagment/contact.php</file>
         </group>
     </open-files>
 </project-private>
