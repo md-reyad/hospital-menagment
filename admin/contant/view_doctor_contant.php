@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_GET['delete'])){
     $admin_obj->delete_doctor($_GET);
 }
@@ -31,7 +30,7 @@ $data=$admin_obj->select_doctor();
 <div class="panel">
 <div class="panel-body">
 <h3 class="title-hero">
-    Responsive data tables
+    View Doctor
 </h3>
 <div class="example-box-wrapper">
 <table id="datatable-responsive" class="table table-striped table-bordered responsive no-wrap" cellspacing="0" width="100%">

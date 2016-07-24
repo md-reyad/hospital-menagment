@@ -4,6 +4,97 @@ require 'config.php';
 
 class admin_function extends Connect {
 
+    public function change_password() {
+        if (empty($_POST['old_password'] && $_POST['new_password'] && $_POST['confirm_password'])) {
+            $msg = "<div class='alert alert-danger'>your input required</br></div>";
+            if ($msg) {
+                return $msg;
+            }
+        } else {
+            /* -----------------Caking old password-------------- */
+            $password = $_POST['old_password'];
+            $password = md5($password);
+            $num = 0;
+
+            $result_password = mysqli_query($this->connect, "SELECT * FROM tbl_admin WHERE password='$password'");
+            $num = mysqli_num_rows($result_password);
+            if ($num == 0) {
+                $msg = "<div class='alert alert-danger'>Your Password Not Match!!</br></div>";
+                if ($msg) {
+                    return $msg;
+                }
+            }
+            /* -----------------Caking new password and confrim password-------------- */ else {
+                if ($_POST['new_password'] != $_POST['confirm_password']) {
+                    $msg = "<span class='alert alert-danger'>Your Password not metch!!</span>";
+                    if ($msg) {
+                        return $msg;
+                    }
+                } else {
+                    $new_password = $_POST['new_password'];
+                    $new_password = md5($new_password);
+                    $result_password = mysqli_query($this->connect, "UPDATE tbl_admin SET password='$new_password' WHERE id=1");
+                    $msg = "<div class='alert alert-success'>Your password change successfully</div>";
+                    if ($msg) {
+                        return $msg;
+                    }
+                }
+            }
+        }
+    }
+
+    public function forgot_email($data) {
+     //   $email = $data['email'];
+
+
+//
+//        $query = "SELECT * FROM tbl_admin WHERE email='$email' AND type=0";
+//        $result = mysqli_query($this->connect, $query);
+//         $p=  mysqli_num_rows($result);
+//        if ($p>0) {
+//            $res = mysqli_fetch_array($result);
+//            $to = $res['email'];
+//            $subject = 'Remind password';
+//            
+//            $msg = 'Your password : ' . $res['password'];
+//            $headers = 'From:imam.reyad93@gmail.com';
+//            $m = mail($to, $subject, $msg, $headers);
+//            if ($m) {
+//                echo'Check your inbox in mail';
+//            } else {
+//                echo'mail is not send';
+//            }
+//        } else {
+//            echo'You entered mail id is not present';
+//        }
+        
+//        ini_set("SMTP","imam.eyad93@gmail.com");//Cambien mail.cantv.net Por localhost ... ojo, ojo OJO
+//ini_set("smtp_port",25);
+//ini_set("sendmail_from","imam.eyad93@gmail.com");
+//
+//$too = "imam.reyad93@gmail.com" ;//pon tu correo para probar, your email
+//$subject = "TEST" ;
+//$message = "User message" ;
+//$user_email = "imam.reyad93@gmail.com" ; // valid POST email address
+//
+//$headers = "From: $user_email " ;
+//$headers .= "Reply-To: $too " ;
+//$headers .= "Return-Path: $too " ;
+//$headers .= "X-Mailer: PHP/" . phpversion (). " " ;
+//$headers .= 'MIME-Version: 1.0' . " " ;
+//$headers .= 'Content-type: text/html; UTF-8' . " " ;
+//
+//if( mail ( $too , $subject , $message , $headers )) echo 'SENT' ;
+
+	
+
+
+    }
+
+
+
+
+
     public function login_chick($data) {
 
         $email = $data['email'];
@@ -33,12 +124,12 @@ class admin_function extends Connect {
 
     public function categoy_stote($category_data) {
 
-        // echo  $query1 = "SELECT * FROM tbl_category where category_name='$category_data[category_name]'";
-        //   $result1=  mysqli_query($this->connect, $query1);
-        //  if ($result1) {
-        //   $msg = '<div class="alert alert-danger">Your Data Already exiest</div>';
-        //    return $msg;
-        // } else {
+// echo  $query1 = "SELECT * FROM tbl_category where category_name='$category_data[category_name]'";
+//   $result1=  mysqli_query($this->connect, $query1);
+//  if ($result1) {
+//   $msg = '<div class="alert alert-danger">Your Data Already exiest</div>';
+//    return $msg;
+// } else {
 
         $query = "INSERT INTO tbl_category (category_name) VALUES('$category_data[category_name]')";
         $result = mysqli_query($this->connect, $query);
@@ -46,7 +137,7 @@ class admin_function extends Connect {
             $msg = '<div class="alert alert-success">Your Data Insert SuccessFully</div>';
             return $msg;
         }
-        //}
+//}
     }
 
     public function select_category() {
@@ -233,6 +324,7 @@ class admin_function extends Connect {
             return $msg;
         }
     }
+
     public function photo_sotre($data, $file) {
         $temp_flie = $file['photo']['tmp_name'];
         $my_file = $file['photo']['name'];
@@ -277,24 +369,27 @@ class admin_function extends Connect {
             return $msg;
         }
     }
-    public function view_serial(){
+
+    public function view_serial() {
         $query = " SELECT tbl_serial.*, tbl_category.category_name FROM tbl_serial left join tbl_category ON tbl_serial.category=tbl_category.id ORDER BY id DESC";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
             return $result;
         }
     }
-    public function edit_serial($data){
-        $id=$data['id'];
-        $query="SELECT * FROM tbl_serial WHERE id='$id' ";
-         $result = mysqli_query($this->connect, $query);
+
+    public function edit_serial($data) {
+        $id = $data['id'];
+        $query = "SELECT * FROM tbl_serial WHERE id='$id' ";
+        $result = mysqli_query($this->connect, $query);
         if ($result) {
-            
+
             return $result;
         }
     }
-    public function delete_serial($data){
-          $id = $data['id'];
+
+    public function delete_serial($data) {
+        $id = $data['id'];
         $query = "DELETE FROM tbl_serial WHERE id='$id' ";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
@@ -302,50 +397,53 @@ class admin_function extends Connect {
         }
     }
 
-    public function serial_update($data){
-        $id=$data['id'];
-         $query1 = "UPDATE tbl_serial SET your_time='$data[your_time]',your_date='$data[your_date]',status='$data[status]' WHERE id='$id' ";
+    public function serial_update($data) {
+        $id = $data['id'];
+        $query1 = "UPDATE tbl_serial SET your_time='$data[your_time]',your_date='$data[your_date]',status='$data[status]' WHERE id='$id' ";
         $result = mysqli_query($this->connect, $query1);
         if ($result) {
-             $msg = "<div class ='alert alert-success'>your Update SuccessFully</div>";
-            $_SESSION['msg']=$msg;
+            $msg = "<div class ='alert alert-success'>your Update SuccessFully</div>";
+            $_SESSION['msg'] = $msg;
             header("location: serial_admin.php");
+        }
     }
-    }
-    public function contact_store($data){
+
+    public function contact_store($data) {
         $query = "INSERT INTO tbl_contact (address,number1,number2,email) VALUES('$data[address]','$data[number1]','$data[number2]','$data[email]')";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
             $msg = "<div class ='alert alert-success'>your Insert SuccessFully</div>";
             return $msg;
-        } 
+        }
     }
-    public function select_contact(){
+
+    public function select_contact() {
         $query = "SELECT * from tbl_contact ORDER BY id DESC";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
             return $result;
         }
     }
-    public function edit_contant($data){
-           $id=$data['id'];
-        $query="SELECT * FROM tbl_contact WHERE id='$id' ";
-         $result = mysqli_query($this->connect, $query);
+
+    public function edit_contant($data) {
+        $id = $data['id'];
+        $query = "SELECT * FROM tbl_contact WHERE id='$id' ";
+        $result = mysqli_query($this->connect, $query);
         if ($result) {
-            
+
             return $result;
         }
     }
-    public function update_contact($data){
-            $id = $data['id'];
+
+    public function update_contact($data) {
+        $id = $data['id'];
         $query1 = "UPDATE tbl_contact SET address='$data[address]',number1='$data[number1]',number2='$data[number2]',email='$data[email]' WHERE id='$id' ";
         $result = mysqli_query($this->connect, $query1);
         if ($result) {
             $msg = "<div class=' alert alert-success' ><b>Success!!</b>Your Edit Successfully </div>";
             $_SESSION['msg'] = $msg;
             header("location: view_contact.php");
-
-    }
+        }
     }
 
     public function logout_admin() {

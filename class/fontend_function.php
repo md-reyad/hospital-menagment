@@ -13,6 +13,11 @@ class fontend_function extends Connect {
     }
 
     public function select_doctor() {
+
+
+
+
+
         $query = "SELECT  tbl_doctor.name,tbl_doctor.id, tbl_doctor.number, tbl_doctor.address, tbl_doctor.education, tbl_doctor.description, tbl_doctor.image, tbl_category.category_name FROM tbl_doctor LEFT JOIN tbl_category ON tbl_doctor.category=tbl_category.id";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
@@ -49,8 +54,8 @@ class fontend_function extends Connect {
     }
 
     public function login($data) {
-       
-      $email = $data['email'];
+
+        $email = $data['email'];
         $password = md5($data['password']);
         $query = "SELECT * FROM tbl_admin WHERE email='$email' and password='$password' AND type=1";
         $result = mysqli_query($this->connect, $query);
@@ -76,30 +81,47 @@ class fontend_function extends Connect {
     }
 
     public function registration($data) {
-          $password = md5($data['password']);
-        $type=1;
+        $password = md5($data['password']);
+        $type = 1;
         $query = "INSERT INTO tbl_admin (name,email,password,number,type)VALUES('$data[name]','$data[email]','$password','$data[number]','$type')";
         $result = mysqli_query($this->connect, $query);
         if ($result) {
-                $msg = '<div class="alert alert-success">Your  Registration SuccessFully</div>';
-                return $msg;
-            }
-    }
-    public function select_contact(){
-           $query = 'SELECT * FROM tbl_contact ORDER BY id DESC LIMIT 1';
-        $result = mysqli_query($this->connect, $query);
-        if ($result) {
-            return $result;
+            $msg = '<div class="alert alert-success">Your  Registration SuccessFully</div>';
+            return $msg;
         }
     }
-    public function select_photo(){
-           $query = 'SELECT * FROM tbl_image ORDER BY id DESC LIMIT 30';
+
+    public function select_contact() {
+        $query = 'SELECT * FROM tbl_contact ORDER BY id DESC LIMIT 1';
         $result = mysqli_query($this->connect, $query);
         if ($result) {
             return $result;
         }
     }
 
+    public function select_photo() {
+        $query = 'SELECT * FROM tbl_image ORDER BY id DESC LIMIT 30';
+        $result = mysqli_query($this->connect, $query);
+        if ($result) {
+            return $result;
+        }
+    }
+
+    public function search_data($search) {
+        $query = "SELECT  tbl_doctor.name,tbl_doctor.id, tbl_doctor.number, tbl_doctor.address, tbl_doctor.education, tbl_doctor.description, tbl_doctor.image, tbl_category.category_name FROM tbl_doctor LEFT JOIN tbl_category ON tbl_doctor.category=tbl_category.id WHERE name like '%" . $search . "%'";
+     //     $sql = " SELECT * FROM tbl_doctor WHERE name like '%" . $search . "%' ";
+        $result = mysqli_query($this->connect, $query);
+        if ($result) {
+            
+            return $result;
+        }  else {
+        echo "sorry data not found";
+        
+        
+        }
+    }
+
 }
+
 
 ?>

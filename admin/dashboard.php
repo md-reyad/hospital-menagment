@@ -423,6 +423,8 @@ include './include/head.php';
                             include './contant/edit_contact_contant.php';
                         }elseif ($pages=='add_photo') {
                             include './contant/add_photo_contant.php';
+                        }elseif ($pages=='change_password') {
+                            include './contant/change_password_contant.php';
                         }
                     } else {
                         include './include/contant.php';

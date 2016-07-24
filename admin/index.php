@@ -50,6 +50,7 @@ if(isset($msg)){
     <div>
         <input type="password" id="inputPassword" name="password"  placeholder="Password:">
     </div>
+    <a href="forgot_password.php">forgot your password</a>
     <div>
         <button type="submit" name="btn" class="btn">SUBMIT</button>
     </div>

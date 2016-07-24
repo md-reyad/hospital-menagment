@@ -89,8 +89,14 @@
             </li>
             <li>
                 <a href="serial_admin.php" title="admin serial">
-                    <i class="glyph-icon icon-linecons-fire"></i>
+                    <i class="glyph-icon icon-arrows-alt"></i>
                     <span>view serial</span>
+                </a>
+            </li>
+            <li>
+                <a href="change_password.php" title="change_password">
+                    <i class="glyph-icon icon-linecons-lock"></i>
+                    <span>Change Password</span>
                 </a>
             </li>
             <?php

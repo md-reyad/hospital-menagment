@@ -1,9 +1,12 @@
 <?php
-require 'class/fontend_function.php';
-$index_objjs= new fontend_function();
-$dataa=$index_objjs->select_doctor()
-?>
+$search_text="$_GET[search]";
+if($search_text){
+    require './class/fontend_function.php';
+    $index_obj=new fontend_function();
+  
+}
 
+?>
     <?php
     include './include/head.php';
     ?>
@@ -47,7 +50,8 @@ $dataa=$index_objjs->select_doctor()
                  
                     
                     <?php
-                            while ($row=  mysqli_fetch_assoc($dataa)){
+                     $data= $index_obj->search_data($search_text); 
+                            while ($row=  mysqli_fetch_assoc($data)){
                     ?>
                     <div class= "col-lg-4 col-sm-6 col-xs-12">
                         <div class= "doctor-meta">
@@ -162,4 +166,6 @@ $dataa=$index_objjs->select_doctor()
 <?php
 include './include/footer.php';
 ?>
+
+
 

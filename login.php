@@ -255,10 +255,16 @@ include './include/head.php';
                     <div class= "appointment">
 
                         <div class="header text-center">
+                                <?php
+                                 
+                                          $dataa= $index_obj->select_contact();
+                                          $result=  mysqli_fetch_assoc($dataa);
+                                         
+                                    ?>
                             <h2>Make an Appointment</h2>
                             <a href="tel:1-800-123-4567" class="number">
                                 <i class="fa fa-phone fa-fw"></i>
-                                1-800-123-4567
+                               <?php echo $result['number1'];?>
                             </a>
                             <span class="or">OR</span>
                             <?php
